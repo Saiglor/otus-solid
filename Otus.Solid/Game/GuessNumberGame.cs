@@ -7,12 +7,12 @@ namespace Otus.Solid.Game
     {
         private GameReader Reader { get; init; }
         private GamePrinter Printer { get; init; }
-        private ISettings Setting { get; init; }
+        private GameSettings Setting { get; init; }
 
         private int hiddenNumber;
         private int numberAttempts = 0;
 
-        public GuessNumberGame(IReader reader, IPrinter printer, ISettings settings)
+        public GuessNumberGame(IReader reader, IPrinter printer, GameSettings settings)
         {
             Reader = new GameReader(reader);
             Printer = new GamePrinter(printer);

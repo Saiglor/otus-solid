@@ -11,7 +11,7 @@ namespace Otus.Solid
             IReader reader = new ConsoleReader();
             IPrinter printer = new ConsolePrinter();
 
-            ISettings settings = new GameSettings()
+            var settings = new GameSettings()
                 .SetTotatNumberAttempts(3)
                 .SetMinNumber(50)
                 .SetMaxNumber(100);
