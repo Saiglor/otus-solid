@@ -3,23 +3,16 @@ using System;
 
 namespace Otus.Solid.Game
 {
-    public class GuessNumberGame
+    public class GuessNumberGame : Game
     {
-        private GameReader Reader { get; init; }
-        private GamePrinter Printer { get; init; }
-        private GameSettings Setting { get; init; }
-
         private int hiddenNumber;
         private int numberAttempts = 0;
 
         public GuessNumberGame(IReader reader, IPrinter printer, GameSettings settings)
-        {
-            Reader = new GameReader(reader);
-            Printer = new GamePrinter(printer);
-            Setting = settings;
-        }
+            : base(reader, printer, settings)
+        { }
 
-        public void Start()
+        public override void Start()
         {
             MakeGuess();
 
